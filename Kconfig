@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# Copyright 2025 Ledger SAS
+
+mainmenu "Sample app"
+
+config SAMPLE_APP
+    bool "enable sample app"
+    select WITH_SENTRY
+
+osource "$(subprojects)/libshield/Kconfig"

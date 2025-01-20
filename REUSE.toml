@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Ledger SAS
+# SPDX-License-Identifier: Apache-2.0
+
+version = 1
+
+# wrap files
+[[annotations]]
+path = "subprojects/*.wrap"
+SPDX-FileCopyrightText = "2023-2025 Ledger SAS"
+SPDX-License-Identifier = "Apache-2.0"
