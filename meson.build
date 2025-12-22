@@ -27,6 +27,15 @@ external_deps = [ package_metadata_dep ]
 libshield_dep = dependency('shield')
 external_deps += [ libshield_dep ]
 
+libecc_proj = subproject('libecc',
+  default_options: [
+    'c_args=@0@'.format(libshield_dep.get_pkgconfig_variable('cflags'))
+  ]
+)
+libecc_dep = libecc_proj.get_variable('libsign_dep')
+external_deps += [ libecc_dep ]
+
+
 sample_app_src = files()
 subdir('src')
 
@@ -37,4 +46,5 @@ sample_app_elf = executable(
     dependencies: [ external_deps ],
     link_language: 'c',
     install: true,
+    c_args: '-DWITH_STDLIB',
 )
